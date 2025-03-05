@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination-like Buttons</title>
+    <style>
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <h1>Click a button to highlight it.</h1>
+
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+
+    <script>
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach(button => {
+            button.addEventListener("click", function() {
+                // Sabhi buttons ko reset karo (original color)
+                buttons.forEach(btn => btn.style.backgroundColor = "blue");
+                
+                // Sirf clicked button ka color change karo
+                this.style.backgroundColor = "green";
+            });
+        });
+    </script>
+</body>
+</html>
