@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- check if a no is even or odd -->
+    <p>Enter a number</p><input type="number" placeholder="Enter a no to check" id="num"></input>
+    <button type="button" onclick="EvenOrOdd()">click</button>
+    <p id="result"></p>
+
+    <script>
+        function EvenOrOdd() {
+            let n = parseInt(document.getElementById("num").value)
+
+            if (n % 2 == 0) {
+                document.getElementById("result").innerHTML = `${n} is even`
+            } else {
+                document.getElementById("result").innerHTML = `${n} is odd`
+            }
+        }
+    </script>
+</body>
+
+</html>
