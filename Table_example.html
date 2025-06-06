@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Table Design With Internal CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        .table-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .bg-delhi {
+            background-color: red !important;
+            color: white !important;
+        }
+
+        .bg-mumbai {
+            background-color: #fff3cd !important;
+        }
+
+        .bg-bangalore {
+            background-color: green !important;
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table-container">
+        <h2 class="text-center mb-4">Styled Bootstrap Table</h2>
+        <table class="table table-bordered table-hover" id="cityTable">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Rohan</td>
+                    <td>24</td>
+                    <td>Delhi</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Neha</td>
+                    <td>23</td>
+                    <td>Mumbai</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Aryan</td>
+                    <td>26</td>
+                    <td>Delhi</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Simran</td>
+                    <td>27</td>
+                    <td>Bangalore</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Karan</td>
+                    <td>25</td>
+                    <td>Mumbai</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Vikram</td>
+                    <td>29</td>
+                    <td>Bangalore</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("#cityTable tbody tr").forEach(row => {
+                let city = row.cells[3].innerText.trim(); // Get city name
+                if (city === "Delhi") {
+                    row.classList.add("bg-delhi");
+                } else if (city === "Mumbai") {
+                    row.classList.add("bg-mumbai");
+                } else if (city === "Bangalore") {
+                    row.classList.add("bg-bangalore");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
