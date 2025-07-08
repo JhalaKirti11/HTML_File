@@ -5,9 +5,7 @@
 .width-500 {
     width: 500px !important;
 }
-.row {
-    --bs-gutter-x: 0 !important;
-}
+
 
 .main-bg {
     background: #EDF6FC;
