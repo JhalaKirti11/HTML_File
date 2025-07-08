@@ -6,7 +6,6 @@
     width: 500px !important;
 }
 
-
 .main-bg {
     background: #EDF6FC;
 }
@@ -270,19 +269,12 @@ input:where(:not([type])),
         font-size: 30px;
     }
 }
-
-/* Adds space below fixed navbar on medium+ screens */
 @media (min-width: 768px) {
     .mt-md-header-space {
         margin-bottom: 7rem !important;
     }
 }
 
-/* @media (min-width: 768px) {
-    .responsive-position {
-        position: absolute;
-    }
-} */
 
 .top-100 {
     top: 100px !important;
@@ -299,11 +291,12 @@ textarea::placeholder {
     font-family: "Poppins", sans-serif !important;
     font-size: 14px !important;
 }
+
 select,
 select option {
-  color: #A1A1AA !important;
-  font-family: "Poppins", sans-serif !important;
-  font-size: 14px !important;
+    color: #A1A1AA !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 14px !important;
 }
 
 .custom-border {
@@ -433,5 +426,5 @@ span.input-group-text {
     font-family: "Poppins", serif !important;
     font-size: 14px !important;
     border-radius: 9px !important;
-   border-color: #E4E4E7 !important;
+    border-color: #E4E4E7 !important;
 }
