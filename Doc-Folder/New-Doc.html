@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctors</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- Tempus Dominus CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.9.4/dist/css/tempus-dominus.min.css"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+    <style>
+        /* Paste your full custom CSS here */
+        .main-width {
+            max-width: 1200px;
+        }
+
+        /* ... All other CSS classes you provided ... */
+        .font-color-1 {
+            color: #231F20;
+        }
+
+        .font-color-2 {
+            color: #232323;
+        }
+
+        .font-color-3 {
+            color: #747d84;
+        }
+
+        .ff-inter {
+            font-family: inter !important;
+        }
+
+        .main-bg {
+            background: #EDF6FC;
+        }
+
+        .doctors-image {
+            background: url('/images/doctors.jpg') no-repeat center center;
+            background-size: cover;
+            height: 339px;
+            position: relative;
+            background-color: #00000073;
+            opacity: 1.5;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .doctors-image .overlay {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .img-size {
+            height: 65px;
+            width: 65px;
+        }
+
+        .doc-grid {
+            border: 1px solid #E5E5E5;
+            border-radius: 16px;
+            padding: 20px 20px 30px 20px !important;
+        }
+
+        .doc-special {
+            font-size: 12px !important;
+            color: #2D96D3;
+            background: #EBFFFA;
+            padding: 2px 10px 2px 10px !important;
+            border: none;
+            border-radius: 20px !important;
+        }
+
+        .btn-info-2 {
+            background: #2D96D3 !important;
+        }
+
+        .b-radius-8 {
+            border-radius: 8px !important;
+        }
+
+        .fs-14 {
+            font-size: 14px !important;
+        }
+
+        .fs-18 {
+            font-size: 18px !important;
+        }
+
+        .fs-30 {
+            font-size: 30px !important;
+        }
+
+        .fs-40 {
+            font-size: 40px !important;
+        }
+
+        .text-secondary-3 {
+            color: #464646;
+            line-height: 28px;
+        }
+
+        .pt-100 {
+            padding-top: 100px !important;
+        }
+
+        .gap-16 {
+            gap: 16px !important;
+        }
+
+        .gap-8 {
+            gap: 8px !important;
+        }
+
+        .text-truncate {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .p-10 {
+            padding: 10px !important;
+        }
+
+        .fw-medium {
+            font-weight: 500;
+        }
+
+        .fw-semibold {
+            font-weight: 600;
+        }
+
+        .fw-normal {
+            font-weight: 400;
+        }
+
+        .shadow-sh {
+            box-shadow: 0px 10px 40px 0px #181A2012 !important;
+        }
+
+        .search-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: #2D96D3 !important;
+            color: #FFFFFF !important;
+        }
+
+        .label-font {
+            font-size: 14px !important;
+            font-family: inter !important;
+            font-weight: 600 !important;
+            color: #231F20 !important;
+            margin-bottom: 2px
+        }
+
+        .option-font {
+            font-size: 14px !important;
+            font-family: inter !important;
+            color: #6C757D !important;
+            border: none !important;
+            line-height: 14px;
+            padding-left: 0 !important;
+        }
+    </style>
+</head>
+
+<body class="main-bg ff-inter">
+
+    <section class="main-width mx-auto px-3 py-5">
+        <div class="shadow-sh px-4">
+            <div class="doctors-image">
+                <div class="overlay">
+                    <div class="overlay-text text-center">
+                        <h1 class="fs-40 fw-normal">Doctors</h1>
+                        <p class="fs-14 fw-semibold mb-0">Home | Doctors</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-white rounded-bottom">
+                <form class="mb-0">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label label-font">Name</label>
+                                    <select class="form-select option-font cursor-pointer">
+                                        <option>Select</option>
+                                        <option>Premier Health Center</option>
+                                        <option>Vitality Cardiology Clinic</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label label-font">Specialist</label>
+                                    <select class="form-select option-font cursor-pointer">
+                                        <option>Select</option>
+                                        <option>Pediatrics</option>
+                                        <option>Cardiology</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label label-font">Facility</label>
+                                    <select class="form-select option-font cursor-pointer">
+                                        <option>Select</option>
+                                        <option>Neurology</option>
+                                        <option>Orthopedics</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label label-font">Appointment Date</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control option-font" placeholder="DD/MM/YYYY" />
+                                        <span class="input-group-text"><img src="images/CalenderIcon.svg" alt="calendar"
+                                                style="width:17px;" /></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-md-start text-center">
+                            <button type="submit" class="search-btn">
+                                <img src="images/search.svg" alt="search" style="width: 18px;" />
+                                <span class="ps-1">Search</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="pt-100">
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <span class="fs-30 fw-medium">Meet The Specialist Doctors</span>
+                    <p class="fs-14 mt-2">There are 12 results in total</p>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select p-10 option-font">
+                        <option>Sort By Alphabetically, A–Z</option>
+                        <option>Sort By Alphabetically, Z-A</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="d-flex overflow-auto gap-16 pb-3">
+                <button class="btn btn-outline-primary fw-semibold active">All</button>
+                <button class="btn btn-outline-primary fw-semibold">Neurosurgery</button>
+                <button class="btn btn-outline-primary fw-semibold">Dentistry</button>
+                <button class="btn btn-outline-primary fw-semibold">Pediatrics</button>
+            </div>
+
+            <div class="row mt-4 g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="doc-grid bg-white">
+                        <div class="d-flex gap-16">
+                            <img class="img-size cursor-pointer" src="images/image.svg" alt="Dr. Patrick Smith" />
+                            <div>
+                                <h6 class="font-color-1 fs-18 fw-medium mb-0">Dr. Patrick Smith</h6>
+                                <p class="text-secondary-3 mb-2">12 years experience</p>
+                                <span class="doc-special">Pediatric</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top my-3"></div>
+
+                        <div class="d-flex flex-column gap-16">
+                            <div class="d-flex align-items-start gap-8">
+                                <i class="fas fa-map-marker-alt icon-size-24 text-danger"></i>
+                                <div>
+                                    <p class="fw-medium font-color-2 mb-2">Location</p>
+                                    <span class="font-color-3 fs-12">42 Main Drive Florida 10306</span>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-info-2 text-light b-radius-8 p-10 fw-semibold fs-14 w-100">
+                                Book an Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="doc-grid bg-white">
+                        <div class="d-flex gap-16">
+                            <img class="img-size cursor-pointer" src="images/image.svg" alt="Dr. Patrick Smith" />
+                            <div>
+                                <h6 class="font-color-1 fs-18 fw-medium mb-0">Dr. Patrick Smith</h6>
+                                <p class="text-secondary-3 mb-2">12 years experience</p>
+                                <span class="doc-special">Pediatric</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top my-3"></div>
+
+                        <div class="d-flex flex-column gap-16">
+                            <div class="d-flex align-items-start gap-8">
+                                <i class="fas fa-map-marker-alt icon-size-24 text-danger"></i>
+                                <div>
+                                    <p class="fw-medium font-color-2 mb-2">Location</p>
+                                    <span class="font-color-3 fs-12">42 Main Drive Florida 10306</span>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-info-2 text-light b-radius-8 p-10 fw-semibold fs-14 w-100">
+                                Book an Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="doc-grid bg-white">
+                        <div class="d-flex gap-16">
+                            <img class="img-size cursor-pointer" src="images/image.svg" alt="Dr. Patrick Smith" />
+                            <div>
+                                <h6 class="font-color-1 fs-18 fw-medium mb-0">Dr. Patrick Smith</h6>
+                                <p class="text-secondary-3 mb-2">12 years experience</p>
+                                <span class="doc-special">Pediatric</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top my-3"></div>
+
+                        <div class="d-flex flex-column gap-16">
+                            <div class="d-flex align-items-start gap-8">
+                                <i class="fas fa-map-marker-alt icon-size-24 text-danger"></i>
+                                <div>
+                                    <p class="fw-medium font-color-2 mb-2">Location</p>
+                                    <span class="font-color-3 fs-12">42 Main Drive Florida 10306</span>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-info-2 text-light b-radius-8 p-10 fw-semibold fs-14 w-100">
+                                Book an Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="doc-grid bg-white">
+                        <div class="d-flex gap-16">
+                            <img class="img-size cursor-pointer" src="images/image.svg" alt="Dr. Patrick Smith" />
+                            <div>
+                                <h6 class="font-color-1 fs-18 fw-medium mb-0">Dr. Patrick Smith</h6>
+                                <p class="text-secondary-3 mb-2">12 years experience</p>
+                                <span class="doc-special">Pediatric</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top my-3"></div>
+
+                        <div class="d-flex flex-column gap-16">
+                            <div class="d-flex align-items-start gap-8">
+                                <i class="fas fa-map-marker-alt icon-size-24 text-danger"></i>
+                                <div>
+                                    <p class="fw-medium font-color-2 mb-2">Location</p>
+                                    <span class="font-color-3 fs-12">42 Main Drive Florida 10306</span>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-info-2 text-light b-radius-8 p-10 fw-semibold fs-14 w-100">
+                                Book an Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="doc-grid bg-white">
+                        <div class="d-flex gap-16">
+                            <img class="img-size cursor-pointer" src="images/image.svg" alt="Dr. Patrick Smith" />
+                            <div>
+                                <h6 class="font-color-1 fs-18 fw-medium mb-0">Dr. Patrick Smith</h6>
+                                <p class="text-secondary-3 mb-2">12 years experience</p>
+                                <span class="doc-special">Pediatric</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top my-3"></div>
+
+                        <div class="d-flex flex-column gap-16">
+                            <div class="d-flex align-items-start gap-8">
+                                <i class="fas fa-map-marker-alt icon-size-24 text-danger"></i>
+                                <div>
+                                    <p class="fw-medium font-color-2 mb-2">Location</p>
+                                    <span class="font-color-3 fs-12">42 Main Drive Florida 10306</span>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-info-2 text-light b-radius-8 p-10 fw-semibold fs-14 w-100">
+                                Book an Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="doc-grid bg-white">
+                        <div class="d-flex gap-16">
+                            <img class="img-size cursor-pointer" src="images/image.svg" alt="Dr. Patrick Smith" />
+                            <div>
+                                <h6 class="font-color-1 fs-18 fw-medium mb-0">Dr. Patrick Smith</h6>
+                                <p class="text-secondary-3 mb-2">12 years experience</p>
+                                <span class="doc-special">Pediatric</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top my-3"></div>
+
+                        <div class="d-flex flex-column gap-16">
+                            <div class="d-flex align-items-start gap-8">
+                                <i class="fas fa-map-marker-alt icon-size-24 text-danger"></i>
+                                <div>
+                                    <p class="fw-medium font-color-2 mb-2">Location</p>
+                                    <span class="font-color-3 fs-12">42 Main Drive Florida 10306</span>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-info-2 text-light b-radius-8 p-10 fw-semibold fs-14 w-100">
+                                Book an Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="doc-grid bg-white">
+                        <div class="d-flex gap-16">
+                            <img class="img-size cursor-pointer" src="images/image.svg" alt="Dr. Patrick Smith" />
+                            <div>
+                                <h6 class="font-color-1 fs-18 fw-medium mb-0">Dr. Patrick Smith</h6>
+                                <p class="text-secondary-3 mb-2">12 years experience</p>
+                                <span class="doc-special">Pediatric</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top my-3"></div>
+
+                        <div class="d-flex flex-column gap-16">
+                            <div class="d-flex align-items-start gap-8">
+                                <i class="fas fa-map-marker-alt icon-size-24 text-danger"></i>
+                                <div>
+                                    <p class="fw-medium font-color-2 mb-2">Location</p>
+                                    <span class="font-color-3 fs-12">42 Main Drive Florida 10306</span>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-info-2 text-light b-radius-8 p-10 fw-semibold fs-14 w-100">
+                                Book an Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="doc-grid bg-white">
+                        <div class="d-flex gap-16">
+                            <img class="img-size cursor-pointer" src="images/image.svg" alt="Dr. Patrick Smith" />
+                            <div>
+                                <h6 class="font-color-1 fs-18 fw-medium mb-0">Dr. Patrick Smith</h6>
+                                <p class="text-secondary-3 mb-2">12 years experience</p>
+                                <span class="doc-special">Pediatric</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top my-3"></div>
+
+                        <div class="d-flex flex-column gap-16">
+                            <div class="d-flex align-items-start gap-8">
+                                <i class="fas fa-map-marker-alt icon-size-24 text-danger"></i>
+                                <div>
+                                    <p class="fw-medium font-color-2 mb-2">Location</p>
+                                    <span class="font-color-3 fs-12">42 Main Drive Florida 10306</span>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-info-2 text-light b-radius-8 p-10 fw-semibold fs-14 w-100">
+                                Book an Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.9.4/dist/js/tempus-dominus.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.btn-outline-primary');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
